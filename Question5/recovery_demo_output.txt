@@ -1,0 +1,46 @@
+--- Scenario: editing /etc/nginx/server.conf, crash at 12:38, last save was 12:30 ---
+
+Step 1: Check for swap files
+$ vim -r
+
+   In directory ~/.vim/swap/:
+   1.    .server.conf.swp
+         owned by: divya
+         file name: /etc/nginx/server.conf
+         modified: YES
+         process id: 9234 (not running)
+
+Step 2: Recover
+$ vim -r /etc/nginx/server.conf
+
+   E325: ATTENTION
+   Found a swap file by the name ".server.conf.swp"
+   modified: YES  |  process id: 9234 (not running)
+
+   [O]pen Read-Only, (E)dit anyway, (R)ecover, (Q)uit, (A)bort:
+   → pressed R
+
+   Recovery completed. Please check the file and save.
+
+Step 3: Inside vim - check undo history
+:undolist
+   number changes  when
+       31      97  12:38:45   ← last state before crash
+
+:earlier 3m   → went back to state at 12:35
+
+Step 4: Save
+:w
+"server.conf" 847 bytes written
+
+Step 5: Clean up swap file
+$ rm ~/.vim/swap/.server.conf.swp
+
+Step 6: Verify with diff against backup
+$ diff server.conf ~/.vim/backup/server.conf.bak
+47c47
+< worker_processes 4;
+---
+> worker_processes 2;
+
+Recovery successful - 8 minutes of unsaved edits restored.

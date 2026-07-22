@@ -1,0 +1,44 @@
+==============================================
+  Web Server Process Manager
+  Parent PID : 12345
+  Timeout    : 4 seconds per child
+==============================================
+
+[PARENT] Spawned child 0 with PID=12346 (task=2s)
+[PARENT] Spawned child 1 with PID=12347 (task=3s)
+[PARENT] Spawned child 2 with PID=12348 (task=8s)
+[PARENT] Spawned child 3 with PID=12349 (task=10s)
+[PARENT] Spawned child 4 with PID=12350 (task=1s)
+
+[PARENT] All children spawned. Starting monitoring loop...
+
+[CHILD 0] PID=12346 started. Will work for 2 seconds.
+[CHILD 1] PID=12347 started. Will work for 3 seconds.
+[CHILD 2] PID=12348 started. Will work for 8 seconds.
+[CHILD 3] PID=12349 started. Will work for 10 seconds.
+[CHILD 4] PID=12350 started. Will work for 1 seconds.
+
+[CHILD 4] PID=12350 finished work.
+[PARENT] Child PID 12350 exited normally with code 0
+
+[CHILD 0] PID=12346 finished work.
+[PARENT] Child PID 12346 exited normally with code 0
+
+[MONITOR] Child 1 (PID=12347): running for 1 seconds
+[MONITOR] Child 2 (PID=12348): running for 1 seconds
+[MONITOR] Child 3 (PID=12349): running for 1 seconds
+
+[CHILD 1] PID=12347 finished work.
+[PARENT] Child PID 12347 exited normally with code 0
+
+[MONITOR] Child 2 (PID=12348): running for 4 seconds
+[MONITOR] Child 2 (PID=12348) is UNRESPONSIVE! Sending SIGTERM...
+[MONITOR] Child 3 (PID=12349): running for 4 seconds
+[MONITOR] Child 3 (PID=12349) is UNRESPONSIVE! Sending SIGTERM...
+
+[PARENT] Child PID 12348 was killed by signal 15
+[PARENT] Child PID 12349 was killed by signal 15
+
+[PARENT] All child processes have been handled.
+[PARENT] No zombie processes remain.
+==============================================

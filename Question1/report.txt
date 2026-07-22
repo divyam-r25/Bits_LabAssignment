@@ -1,0 +1,18 @@
+========================================
+  Submission Deduplication Report
+  Generated: Tue Jul 22 12:40:00 IST 2026
+========================================
+
+[BACKED UP] alice_assignment.txt
+[BACKED UP] bob_assignment.txt
+[DUPLICATE] charlie_assignment.txt  (same content as: alice_assignment.txt)
+[BACKED UP] diana_assignment.txt
+[DUPLICATE] eve_assignment.txt  (same content as: bob_assignment.txt)
+
+-------- Summary --------
+Total files processed : 5
+Duplicate files found : 2
+Unique files backed up: 3
+Errors logged to      : ./errors.log
+Backup location       : ./unique_backup
+========================================

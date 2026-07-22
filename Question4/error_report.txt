@@ -1,0 +1,4 @@
+ERROR 2026-07-22 12:40:05 Connection timeout: client 192.168.1.15
+ERROR 2026-07-22 12:40:08 Failed to write to disk: /var/log/app.log
+ERROR 2026-07-22 12:40:10 Database query failed: timeout after 30s
+ERROR 2026-07-22 12:40:13 Segmentation fault in worker process 4821

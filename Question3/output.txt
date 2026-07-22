@@ -1,0 +1,40 @@
+==============================================
+  Employee Records using Linux System Calls
+==============================================
+
+[OPEN]  File 'employee.db' opened with fd=3
+
+[WRITE] Writing 5 employee records...
+  Written: Employee ID=101, 64 bytes
+  Written: Employee ID=102, 64 bytes
+  Written: Employee ID=103, 64 bytes
+  Written: Employee ID=104, 64 bytes
+  Written: Employee ID=105, 64 bytes
+
+--- All Records (immediately after write) ---
+[READ]  Record index=0 retrieved (64 bytes from offset 0)
+  ID: 101 | Name: Alice Johnson          | Dept: Engineering  | Salary: 75000.00
+[READ]  Record index=1 retrieved (64 bytes from offset 64)
+  ID: 102 | Name: Bob Smith              | Dept: Marketing     | Salary: 62000.00
+[READ]  Record index=2 retrieved (64 bytes from offset 128)
+  ID: 103 | Name: Carol Williams         | Dept: Finance       | Salary: 68000.00
+[READ]  Record index=3 retrieved (64 bytes from offset 192)
+  ID: 104 | Name: David Brown            | Dept: Engineering   | Salary: 80000.00
+[READ]  Record index=4 retrieved (64 bytes from offset 256)
+  ID: 105 | Name: Eva Martinez           | Dept: HR            | Salary: 58000.00
+
+[LSEEK] Moved file offset to byte 64 (record index 1)
+[UPDATE] Record 1 updated. 64 bytes overwritten.
+
+--- Verifying Updated Record (index 1) ---
+[READ]  Record index=1 retrieved (64 bytes from offset 64)
+  ID: 102 | Name: Bob Smith              | Dept: Management    | Salary: 90000.00
+
+--- Direct Access: Retrieving Record Index 3 ---
+[READ]  Record index=3 retrieved (64 bytes from offset 192)
+  ID: 104 | Name: David Brown            | Dept: Engineering   | Salary: 80000.00
+
+[CLOSE] File descriptor 3 closed successfully.
+
+Database file saved: employee.db (size = 64 bytes x 5 records)
+==============================================

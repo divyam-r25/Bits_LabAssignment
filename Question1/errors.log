@@ -1,0 +1,4 @@
+# No errors occurred during this run.
+# This file would contain messages like:
+# [ERROR] Could not compute hash for corrupted_file.txt: Permission denied
+# [WARN]  Skipping non-regular entry: ./submissions/subdir

@@ -1,0 +1,3 @@
+This is student Diana's assignment submission.
+Topic: Linux Shell Scripting
+Content: Shell scripting automates tasks by writing a series of commands in a script file.

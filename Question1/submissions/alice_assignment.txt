@@ -1,0 +1,3 @@
+This is student Alice's assignment submission.
+Topic: Linux File Systems
+Content: A file system is a method for storing and organizing files on a storage device.
